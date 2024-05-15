@@ -22,6 +22,10 @@
     display: flex;
 }
 
+.menu__btn{
+    display: none;
+}
+
 .menu__list-item + .menu__list-item{
     margin-left: 50px;
 }
@@ -708,4 +712,80 @@ sup{
     color: #CCCCCC;
     font-size: 12px;
     font-family: "Open Sans", sans-serif;
+}
+
+
+@media (max-width: 768px) {
+    .menu__btn{
+        display: block;
+        border: none;
+        color: transparent;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        background: transparent;
+    }
+
+    .menu__list{
+        /* display: none; */
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #000000;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    .menu__list{
+        flex-direction: column;
+        padding: 90px 0 15px;
+        transform: translateY(-200%);
+    }
+
+
+    .menu__list-link{
+        display: block;
+        padding: 15px 0;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+
+    .menu__list-item + .menu__list-item{
+        margin-left: 0;
+    }
+
+    .header__title{
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .header__subtitle{
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .logo{
+        position: relative;
+        z-index: 2;
+    }
+
+    .header__top-inner.header__top-inner--active .menu__list{
+        transform: translateY(0);
+    }
+
+    .header__top-inner.header__top-inner--active .menu__btn path{
+        fill: white;
+
+    }
+
+    .header__top-inner.header__top-inner--active .menu__btn rect{
+        fill: white;
+    }
+
+    .header__top-inner.header__top-inner--active svg path{
+        fill: white;
+    }
 }
